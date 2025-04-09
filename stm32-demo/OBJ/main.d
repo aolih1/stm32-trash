@@ -35,3 +35,4 @@
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
 ..\obj\main.o: D:\cdutstudy\keil\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: syn6288.h
+..\obj\main.o: PWM.h

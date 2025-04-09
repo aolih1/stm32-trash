@@ -6,7 +6,7 @@
 #include "sys.h"
 #include "syn6288.h"
 #include "stdio.h"
-
+#include "PWM.h"
 
 u8 SYN_StopCom[] = {0xFD, 0X00, 0X02, 0X02, 0XFD}; //停止合成
 u8 SYN_SuspendCom[] = {0XFD, 0X00, 0X02, 0X03, 0XFC}; //暂停合成
@@ -27,11 +27,15 @@ int main(void)
 {	
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
 	delay_init();
+	PWM_Init();
 	LD3320_Init();
 	EXTIX_Init();
 	LD_Reset();
 	uart_init(9600);
 	USART3_Init(9600);
+	TIM_SetCompare1(TIM2, 500);
+  TIM_SetCompare2(TIM2, 500);
+  TIM_SetCompare3(TIM2, 500);
 	nAsrStatus = LD_ASR_NONE;		//	初始状态：没有在作ASR
 	SCS=0;
 	printf("运行程序\r\n");
@@ -97,43 +101,23 @@ void User_Modification(u8 dat)
 					printf("\"测试完毕\"识别成功\r\n"); /*text.....*/
 												break;
 			
-			case CODE_1KL1:	 /*命令“北京”*/
-					printf("\"北京\"识别成功\r\n"); /*text.....*/
-					SYN_FrameInfo(2,"[v7][m1][t5]北京");
+			case CODE_1KL1:	 /*命令“可回收垃圾”*/
+					printf("\"可回收垃圾\"识别成功\r\n"); /*text.....*/
+					SYN_FrameInfo(2,"[v7][m1][t5]可回收垃圾");
+					TIM_SetCompare1(TIM2, 1500);
 					delay_ms(1500);
 												break;
-			case CODE_1KL2:		/*命令“上海”*/
+			case CODE_1KL2:		/*命令“不可回收垃圾”*/
 		
-					printf("\"上海\"识别成功\r\n"); /*text.....*/
+					printf("\"不可回收垃圾\"识别成功\r\n"); /*text.....*/
+					SYN_FrameInfo(2,"[v7][m1][t5]不可回收垃圾");
+					TIM_SetCompare2(TIM2, 1500);
+					delay_ms(1500);
 												break;
-			case CODE_1KL3:	 /*命令“开灯”*/
-					printf("\"开灯\"识别成功\r\n"); /*text.....*/
-												break;
-			case CODE_1KL4:		/*命令“关灯”*/				
-					printf("\"关灯\"识别成功\r\n"); /*text.....*/
-												break;
-			
-			case CODE_2KL1:	 /*命令“....”*/
-					printf("\"广州\"识别成功\r\n"); /*text.....*/
-												break;
-			case CODE_2KL2:	 /*命令“....”*/
-					printf("\"深圳\"识别成功\r\n"); /*text.....*/
-												break;
-			case CODE_2KL3:	 /*命令“....”*/
-					printf("\"向左转\"识别成功\r\n"); /*text.....*/
-												break;
-			case CODE_2KL4:	 /*命令“....”*/
-					printf("\"向右转\"识别成功\r\n"); /*text.....*/
-															break;
-						
-			case CODE_3KL1:	 /*命令“....”*/
-					printf("\"打开空调\"识别成功\r\n"); /*text.....*/
-												break;
-			case CODE_3KL2:	 /*命令“....”*/
-					printf("\"关闭空调\"识别成功\r\n"); /*text.....*/
-												break;
-			case CODE_5KL1:	 /*命令“....”*/
-					printf("\"后退\"识别成功"); /*text.....*/
+			case CODE_1KL3:	 /*命令“有害垃圾”*/
+					printf("\"有害垃圾\"识别成功\r\n"); /*text.....*/
+					TIM_SetCompare3(TIM2, 1500);
+					delay_ms(1500);
 												break;
 			
 			default:break;

@@ -1,5 +1,5 @@
 Dependencies for Project 'BKM-LD3320', Target 'Template': (DO NOT MODIFY !)
-F (.\main.c)(0x67F20F2D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x67F69F05)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (stm32f10x.h)(0x67F0EF5D)
 I (..\CORE\core_cm3.h)(0x67F0EF5B)
 I (D:\cdutstudy\keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -36,6 +36,7 @@ I (..\HARDWARE\LD3320\LDChip.h)(0x67F0EF5C)
 I (..\SYSTEM\usart\usart.h)(0x67F20A18)
 I (D:\cdutstudy\keil\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (syn6288.h)(0x67F0F06F)
+I (PWM.h)(0x67F69F12)
 F (.\stm32f10x_it.c)(0x67F0EF5D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x67F0EF5D)
 I (stm32f10x.h)(0x67F0EF5D)
@@ -864,7 +865,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x67F0EF5C)
 F (..\README.TXT)(0x00000000)()
-F (..\HARDWARE\LD3320\LDChip.c)(0x67F0EF5C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\ldchip.o --omf_browse ..\obj\ldchip.crf --depend ..\obj\ldchip.d)
+F (..\HARDWARE\LD3320\LDChip.c)(0x67F6923F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\ldchip.o --omf_browse ..\obj\ldchip.crf --depend ..\obj\ldchip.d)
 I (..\HARDWARE\LD3320\Reg_RW.h)(0x67F0EF5C)
 I (..\SYSTEM\sys\sys.h)(0x67F0EF5D)
 I (..\USER\stm32f10x.h)(0x67F0EF5D)
@@ -1002,3 +1003,34 @@ I (..\STM32F10x_FWLib\inc\misc.h)(0x67F0EF5C)
 I (..\SYSTEM\usart\usart.h)(0x67F20A18)
 I (D:\cdutstudy\keil\ARM\ARMCC\include\stdio.h)(0x588B8344)
 F (.\timer.h)(0x67F209E2)()
+F (.\PWM.h)(0x67F69F12)()
+F (.\PWM.c)(0x67F69BDB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\pwm.o --omf_browse ..\obj\pwm.crf --depend ..\obj\pwm.d)
+I (stm32f10x.h)(0x67F0EF5D)
+I (..\CORE\core_cm3.h)(0x67F0EF5B)
+I (D:\cdutstudy\keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (system_stm32f10x.h)(0x67F0EF5D)
+I (stm32f10x_conf.h)(0x67F0EF5D)
+I (..\STM32F10x_FWLib\inc\stm32f10x_adc.h)(0x67F0EF5C)
+I (..\USER\stm32f10x.h)(0x67F0EF5D)
+I (..\STM32F10x_FWLib\inc\stm32f10x_bkp.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_can.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_cec.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_crc.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_dac.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_dma.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_exti.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_flash.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_i2c.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_iwdg.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_pwr.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_rtc.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_sdio.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x67F0EF5C)
+I (..\STM32F10x_FWLib\inc\misc.h)(0x67F0EF5C)

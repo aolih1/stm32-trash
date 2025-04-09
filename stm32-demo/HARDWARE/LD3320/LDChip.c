@@ -224,7 +224,7 @@ u8 LD_AsrAddFixed(void)
 	u8 nAsrAddLength;
 	
 	#define DATE_A 14   //数组二维数值
-	#define DATE_B 20		//数组一维数值
+	#define DATE_B 32		//数组一维数值
 	
 	
 	u8 sRecog[DATE_A][DATE_B] = {
@@ -233,18 +233,11 @@ u8 LD_AsrAddFixed(void)
 																		"ce shi wan bi",\
 		
 																		"ke hui shou la ji",\
-																		"shang hai",\
-																		"kai deng",\
-																		"guan deng",\
+																		"bu ke hui shou la ji",\
+																		"you hai la ji",\
+																		"ke hui shou la ji tong man",\
 		
-																		"guang zhou",\
-																		"shen zhen",\
-																		"xiang zuo zhuan",\
-																		"xiang you zhuan",\
-		
-																		"da kai kong tiao",\
-																		"guan bi kong tiao",\
-																		"hou tui",\
+																		
 																 };	/*添加关键词，用户修改*/
 	u8 pCode[DATE_A] = {
 													CODE_CMD,\
@@ -254,16 +247,8 @@ u8 LD_AsrAddFixed(void)
 													CODE_1KL1,\
 		                      CODE_1KL2,\
 		                      CODE_1KL3,\
-		                      CODE_1KL4,\
-		
-													CODE_2KL1,\
-		                      CODE_2KL2,\
-		                      CODE_2KL3,\
-		                      CODE_2KL4,\
-		
-													CODE_3KL1,\
-		                      CODE_3KL2,\
-													CODE_5KL1,
+
+							
 												};	/*添加识别码，用户修改*/	
 	flag = 1;
 	for (k=0; k<DATE_A; k++)
