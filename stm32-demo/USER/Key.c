@@ -46,7 +46,7 @@ void Key_Init()
 
 void EXTI0_IRQHandler()
 {
-	if (EXTI_GetITStatus(EXTI_Line14) == SET)		//判断是否是外部中断14号线触发的中断
+	if (EXTI_GetITStatus(EXTI_Line0) == SET)		//判断是否是外部中断0号线触发的中断
 	{
 		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
 		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) == 0)
@@ -60,7 +60,7 @@ void EXTI0_IRQHandler()
 };
 void EXTI1_IRQHandler()
 {
-		if (EXTI_GetITStatus(EXTI_Line14) == SET)		//判断是否是外部中断14号线触发的中断
+		if (EXTI_GetITStatus(EXTI_Line1) == SET)		//判断是否是外部中断1号线触发的中断
 	{
 		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
 		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_1) == 0)

@@ -14,7 +14,7 @@ void PWM_Init(void)
 	/*GPIO初始化*/
 	GPIO_InitTypeDef GPIO_InitStructure;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_4;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);							//将PA1引脚初始化为复用推挽输出	
 																	//受外设控制的引脚，均需要配置为复用模式
@@ -62,7 +62,7 @@ void PWM_Init(void)
 
 //  TIM_SetCompare1(TIM_TypeDef* TIMx, uint16_t Compare1);
 //  TIM_SetCompare2(TIM_TypeDef* TIMx, uint16_t Compare2);
-//  TIM_SetCompare3(TIM_TypeDef* TIMx, uint16_t Compare3);
+//  TIM_SetCompare4(TIM_TypeDef* TIMx, uint16_t Compare3);
 
 
 

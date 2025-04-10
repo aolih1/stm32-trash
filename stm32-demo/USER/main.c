@@ -7,6 +7,7 @@
 #include "syn6288.h"
 #include "stdio.h"
 #include "PWM.h"
+#include "Sensor.h"
 
 u8 SYN_StopCom[] = {0xFD, 0X00, 0X02, 0X02, 0XFD}; //停止合成
 u8 SYN_SuspendCom[] = {0XFD, 0X00, 0X02, 0X03, 0XFC}; //暂停合成
@@ -33,6 +34,7 @@ int main(void)
 	LD_Reset();
 	uart_init(9600);
 	USART3_Init(9600);
+	Sensor_Init();
 	TIM_SetCompare1(TIM2, 500);
   TIM_SetCompare2(TIM2, 500);
   TIM_SetCompare3(TIM2, 500);
@@ -41,6 +43,21 @@ int main(void)
 	printf("运行程序\r\n");
 	while(1)
 	{
+		// GPIO_Pin_12 | GPIO_Pin_13 |  GPIO_Pin_14
+		if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_12))
+		{
+			SYN_FrameInfo(2,"[v7][m1][t5]可回收垃圾已满");
+		};
+			
+		if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_13))
+		{
+			SYN_FrameInfo(2,"[v7][m1][t5]不可回收垃圾已满");
+		};
+		
+		if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14))
+		{
+			SYN_FrameInfo(2,"[v7][m1][t5]有害垃圾已满");
+		};
 		switch(nAsrStatus)
 		{
 			case LD_ASR_RUNING:
@@ -116,7 +133,7 @@ void User_Modification(u8 dat)
 												break;
 			case CODE_1KL3:	 /*命令“有害垃圾”*/
 					printf("\"有害垃圾\"识别成功\r\n"); /*text.....*/
-					TIM_SetCompare3(TIM2, 1500);
+					TIM_SetCompare4(TIM2, 1500);
 					delay_ms(1500);
 												break;
 			

@@ -615,6 +615,26 @@
               <FileType>1</FileType>
               <FilePath>.\Key.c</FilePath>
             </File>
+            <File>
+              <FileName>Sensor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sensor.h</FilePath>
+            </File>
+            <File>
+              <FileName>Sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>espwifi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\espwifi.c</FilePath>
+            </File>
+            <File>
+              <FileName>espwifi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\espwifi.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

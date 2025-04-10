@@ -175,12 +175,13 @@ void EXTI9_5_IRQHandler(void)
 		EXTI_ClearFlag(LD3320_IRQEXITLINE);
 		EXTI_ClearITPendingBit(LD3320_IRQEXITLINE);//清除LINE上的中断标志位  
 	} 
-	if (EXTI_GetITStatus(EXTI_Line7) == SET)		//判断是否是外部中断14号线触发的中断
+	// 按键PA7
+	if (EXTI_GetITStatus(EXTI_Line7) == SET)		
 	{
 		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
 		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7) == 0)
 		{
-			TIM_SetCompare3(TIM2, 1500);
+			TIM_SetCompare4(TIM2, 1500);
 		}
 		EXTI_ClearITPendingBit(EXTI_Line7);		
 													//中断标志位必须清除
