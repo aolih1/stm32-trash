@@ -44,31 +44,3 @@ void Key_Init()
 	NVIC_Init(&NVIC_InitStructure);								//将结构体变量交给NVIC_Init，配置NVIC外设
 }
 
-void EXTI0_IRQHandler()
-{
-	if (EXTI_GetITStatus(EXTI_Line0) == SET)		//判断是否是外部中断0号线触发的中断
-	{
-		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
-		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) == 0)
-		{
-			TIM_SetCompare1(TIM2, 1500);
-		}
-		EXTI_ClearITPendingBit(EXTI_Line0);		//清除外部中断14号线的中断标志位
-													//中断标志位必须清除
-													//否则中断将连续不断地触发，导致主程序卡死
-	}
-};
-void EXTI1_IRQHandler()
-{
-		if (EXTI_GetITStatus(EXTI_Line1) == SET)		//判断是否是外部中断1号线触发的中断
-	{
-		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
-		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_1) == 0)
-		{
-			TIM_SetCompare2(TIM2, 1500);
-		}
-		EXTI_ClearITPendingBit(EXTI_Line1);		
-													//中断标志位必须清除
-													//否则中断将连续不断地触发，导致主程序卡死
-	}
-}

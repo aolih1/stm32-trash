@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\BKM32.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\BKM32.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Apr 10 23:36:20 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Apr 15 14:25:04 2025
 <BR><P>
 <H3>Maximum Stack Usage =        536 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -29,13 +29,13 @@ Function Pointers
  <LI><a href="#[1a]">DMA1_Channel6_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[1b]">DMA1_Channel7_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[7]">DebugMon_Handler</a> from stm32f10x_it.o(i.DebugMon_Handler) referenced from startup_stm32f10x_md.o(RESET)
- <LI><a href="#[10]">EXTI0_IRQHandler</a> from key.o(i.EXTI0_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
+ <LI><a href="#[10]">EXTI0_IRQHandler</a> from main.o(i.EXTI0_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[32]">EXTI15_10_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
- <LI><a href="#[11]">EXTI1_IRQHandler</a> from key.o(i.EXTI1_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
+ <LI><a href="#[11]">EXTI1_IRQHandler</a> from main.o(i.EXTI1_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[12]">EXTI2_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[13]">EXTI3_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[14]">EXTI4_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
- <LI><a href="#[21]">EXTI9_5_IRQHandler</a> from reg_rw.o(i.EXTI9_5_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
+ <LI><a href="#[21]">EXTI9_5_IRQHandler</a> from main.o(i.EXTI9_5_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[e]">FLASH_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[2]">HardFault_Handler</a> from stm32f10x_it.o(i.HardFault_Handler) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[2a]">I2C1_ER_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
@@ -366,7 +366,7 @@ Global Symbols
 <P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f10x_it.o(i.DebugMon_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[10]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, key.o(i.EXTI0_IRQHandler))
+<P><STRONG><a name="[10]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, main.o(i.EXTI0_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EXTI0_IRQHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
@@ -376,7 +376,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[11]"></a>EXTI1_IRQHandler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, key.o(i.EXTI1_IRQHandler))
+<P><STRONG><a name="[11]"></a>EXTI1_IRQHandler</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, main.o(i.EXTI1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EXTI1_IRQHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
@@ -386,15 +386,15 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[21]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, reg_rw.o(i.EXTI9_5_IRQHandler))
+<P><STRONG><a name="[21]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, main.o(i.EXTI9_5_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = EXTI9_5_IRQHandler &rArr; ProcessInt &rArr; LD_WriteReg
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare4
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ProcessInt
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_GetITStatus
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_ClearITPendingBit
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_ClearFlag
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ProcessInt
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
@@ -414,15 +414,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[4f]"></a>EXTI_ClearITPendingBit</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_exti.o(i.EXTI_ClearITPendingBit))
-<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
-<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
 </UL>
 
 <P><STRONG><a name="[4c]"></a>EXTI_GetITStatus</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f10x_exti.o(i.EXTI_GetITStatus))
-<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
-<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
 </UL>
 
 <P><STRONG><a name="[57]"></a>EXTI_Init</STRONG> (Thumb, 142 bytes, Stack size 0 bytes, stm32f10x_exti.o(i.EXTI_Init))
@@ -453,9 +453,9 @@ Global Symbols
 
 <P><STRONG><a name="[4d]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(i.GPIO_ReadInputDataBit))
 <BR><BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
 <LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
-<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
 </UL>
 
 <P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.HardFault_Handler))
@@ -544,8 +544,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LD_GetResult
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ProcessInt
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ProcessInt
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LD_GetResult
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LD_Init_Common
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LD_Check_ASRBusyFlag_b2
 </UL>
@@ -868,7 +868,7 @@ Global Symbols
 <P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.UsageFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[88]"></a>User_Modification</STRONG> (Thumb, 196 bytes, Stack size 8 bytes, main.o(i.User_Modification))
+<P><STRONG><a name="[88]"></a>User_Modification</STRONG> (Thumb, 284 bytes, Stack size 8 bytes, main.o(i.User_Modification))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = User_Modification &rArr; SYN_FrameInfo &rArr; USART3_SendString
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms

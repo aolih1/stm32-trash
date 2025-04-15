@@ -15,7 +15,7 @@ u8 SYN_RecoverCom[] = {0XFD, 0X00, 0X02, 0X04, 0XFB}; //恢复合成
 u8 SYN_ChackCom[] = {0XFD, 0X00, 0X02, 0X21, 0XDE}; //状态查询
 u8 SYN_PowerDownCom[] = {0XFD, 0X00, 0X02, 0X88, 0X77}; //进入POWER DOWN 状态命令
 
-
+static int flag1,flag2,flag3; //舵机状态
 
 void User_Modification(u8 dat);
 
@@ -121,19 +121,31 @@ void User_Modification(u8 dat)
 			case CODE_1KL1:	 /*命令“可回收垃圾”*/
 					printf("\"可回收垃圾\"识别成功\r\n"); /*text.....*/
 					SYN_FrameInfo(2,"[v7][m1][t5]可回收垃圾");
-					TIM_SetCompare1(TIM2, 1500);
+					flag1 = ~flag1;
+				  if(flag1)
+						TIM_SetCompare1(TIM2, 1500);
+					else
+						TIM_SetCompare1(TIM2, 500);
 					delay_ms(1500);
 												break;
 			case CODE_1KL2:		/*命令“不可回收垃圾”*/
 		
 					printf("\"不可回收垃圾\"识别成功\r\n"); /*text.....*/
 					SYN_FrameInfo(2,"[v7][m1][t5]不可回收垃圾");
-					TIM_SetCompare2(TIM2, 1500);
+					flag2 = ~flag2;
+				  if(flag2)
+						TIM_SetCompare2(TIM2, 1500);
+					else
+						TIM_SetCompare2(TIM2, 500);
 					delay_ms(1500);
 												break;
 			case CODE_1KL3:	 /*命令“有害垃圾”*/
 					printf("\"有害垃圾\"识别成功\r\n"); /*text.....*/
-					TIM_SetCompare4(TIM2, 1500);
+					flag3 = ~flag3;
+				  if(flag3)
+						TIM_SetCompare4(TIM2, 1500);
+					else
+						TIM_SetCompare4(TIM2, 500);
 					delay_ms(1500);
 												break;
 			
@@ -145,4 +157,72 @@ void User_Modification(u8 dat)
 		printf("请说出一级口令\r\n"); /*text.....*/	
 	}
 	
+}
+
+
+
+void EXTI0_IRQHandler()
+{
+	if (EXTI_GetITStatus(EXTI_Line0) == SET)		//判断是否是外部中断0号线触发的中断
+	{
+		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
+		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) == 0)
+		{
+			    flag1 = ~flag1;
+				  if(flag1)
+						TIM_SetCompare1(TIM2, 1500);
+					else
+						TIM_SetCompare1(TIM2, 500);
+		}
+		EXTI_ClearITPendingBit(EXTI_Line0);		//清除外部中断14号线的中断标志位
+													//中断标志位必须清除
+													//否则中断将连续不断地触发，导致主程序卡死
+	}
+};
+void EXTI1_IRQHandler()
+{
+		if (EXTI_GetITStatus(EXTI_Line1) == SET)		//判断是否是外部中断1号线触发的中断
+	{
+		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
+		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_1) == 0)
+		{
+			    flag2 = ~flag2;
+				  if(flag1)
+						TIM_SetCompare2(TIM2, 1500);
+					else
+						TIM_SetCompare2(TIM2, 500);
+		}
+		EXTI_ClearITPendingBit(EXTI_Line1);		
+													//中断标志位必须清除
+													//否则中断将连续不断地触发，导致主程序卡死
+	}
+}
+
+void EXTI9_5_IRQHandler(void)
+{
+	if(EXTI_GetITStatus(LD3320_IRQEXITLINE)!= RESET ) 
+	{
+		ProcessInt(); 
+ 		//printf("进入中断\r\n");	
+		EXTI_ClearFlag(LD3320_IRQEXITLINE);
+		EXTI_ClearITPendingBit(LD3320_IRQEXITLINE);//清除LINE上的中断标志位  
+	} 
+	// 按键PA7
+	if (EXTI_GetITStatus(EXTI_Line7) == SET)		
+	{
+		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7) == 0)
+		{
+			// TIM_SetCompare4(TIM2, 1500);
+			   flag3 = ~flag3;
+				  if(flag3)
+						TIM_SetCompare4(TIM2, 1500);
+					else
+						TIM_SetCompare4(TIM2, 500);
+			
+		}
+		EXTI_ClearITPendingBit(EXTI_Line7);		
+													//中断标志位必须清除
+													//否则中断将连续不断地触发，导致主程序卡死
+	}
 }

@@ -1,5 +1,5 @@
 Dependencies for Project 'BKM-LD3320', Target 'Template': (DO NOT MODIFY !)
-F (.\main.c)(0x67F7E55A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x67FDFBB9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (stm32f10x.h)(0x67F0EF5D)
 I (..\CORE\core_cm3.h)(0x67F0EF5B)
 I (D:\cdutstudy\keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -899,7 +899,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x67F0EF5C)
 I (..\HARDWARE\LD3320\LDChip.h)(0x67F0EF5C)
 I (..\SYSTEM\delay\delay.h)(0x67F0EF5D)
-F (..\HARDWARE\LD3320\Reg_RW.c)(0x67F7DAA4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\reg_rw.o --omf_browse ..\obj\reg_rw.crf --depend ..\obj\reg_rw.d)
+F (..\HARDWARE\LD3320\Reg_RW.c)(0x67FDFBBC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\reg_rw.o --omf_browse ..\obj\reg_rw.crf --depend ..\obj\reg_rw.d)
 I (..\HARDWARE\LD3320\Reg_RW.h)(0x67F0EF5C)
 I (..\SYSTEM\sys\sys.h)(0x67F0EF5D)
 I (..\USER\stm32f10x.h)(0x67F0EF5D)
@@ -1005,7 +1005,7 @@ I (..\SYSTEM\usart\usart.h)(0x67F20A18)
 I (D:\cdutstudy\keil\ARM\ARMCC\include\stdio.h)(0x588B8344)
 F (.\timer.h)(0x67F209E2)()
 F (.\PWM.h)(0x67F69F12)()
-F (.\PWM.c)(0x67F7D9E8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\pwm.o --omf_browse ..\obj\pwm.crf --depend ..\obj\pwm.d)
+F (.\PWM.c)(0x67FDFADE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\pwm.o --omf_browse ..\obj\pwm.crf --depend ..\obj\pwm.d)
 I (stm32f10x.h)(0x67F0EF5D)
 I (..\CORE\core_cm3.h)(0x67F0EF5B)
 I (D:\cdutstudy\keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -1036,7 +1036,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x67F0EF5C)
 F (.\Key.h)(0x67F722ED)()
-F (.\Key.c)(0x67F7DAB1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+F (.\Key.c)(0x67FDFBBC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
 I (stm32f10x.h)(0x67F0EF5D)
 I (..\CORE\core_cm3.h)(0x67F0EF5B)
 I (D:\cdutstudy\keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -1097,3 +1097,5 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x67F0EF5C)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x67F0EF5C)
+F (.\espwifi.c)(0x67F7E59B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LD3320 -I ..\HARDWARE\OLED-I.\RTE\_Template-ID:\cdutstudy\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\cdutstudy\keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\espwifi.o --omf_browse ..\obj\espwifi.crf --depend ..\obj\espwifi.d)
+F (.\espwifi.h)(0x67F91362)()
