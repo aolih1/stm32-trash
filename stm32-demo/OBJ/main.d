@@ -37,3 +37,4 @@
 ..\obj\main.o: syn6288.h
 ..\obj\main.o: PWM.h
 ..\obj\main.o: Sensor.h
+..\obj\main.o: Key.h

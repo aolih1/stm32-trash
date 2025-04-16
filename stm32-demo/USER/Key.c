@@ -2,7 +2,7 @@
 
 #include "stm32f10x.h"
 
-
+extern _Bool flag1 ,flag2 ,flag3;
 
 void Key_Init()
 {
@@ -10,7 +10,7 @@ void Key_Init()
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);
 	
 	GPIO_InitTypeDef GPIO_InitStructure;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_InitStructure.GPIO_Mode =  GPIO_Mode_IPU;
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 ;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);							//引脚初始化为上拉输入
@@ -18,7 +18,8 @@ void Key_Init()
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7 ;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);	
 	
-	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource0 | GPIO_PinSource1);
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource0);
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource1);
 	GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource7);
 	
 	EXTI_InitTypeDef EXTI_InitStructure;						//定义结构体变量
@@ -44,3 +45,40 @@ void Key_Init()
 	NVIC_Init(&NVIC_InitStructure);								//将结构体变量交给NVIC_Init，配置NVIC外设
 }
 
+void EXTI0_IRQHandler()
+{
+	printf("\"中断成功\"识别成功\r\n");
+	if (EXTI_GetITStatus(EXTI_Line0) == SET)		//判断是否是外部中断0号线触发的中断
+	{
+		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
+		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) == 0)
+		{
+			    flag1 = ~flag1;
+				  if(flag1)
+						TIM_SetCompare1(TIM2, 1500);
+					else
+						TIM_SetCompare1(TIM2, 500);
+		}
+		EXTI_ClearITPendingBit(EXTI_Line0);		//清除外部中断14号线的中断标志位
+													//中断标志位必须清除
+													//否则中断将连续不断地触发，导致主程序卡死
+	}
+};
+void EXTI1_IRQHandler()
+{
+		if (EXTI_GetITStatus(EXTI_Line1) == SET)		//判断是否是外部中断1号线触发的中断
+	{
+		/*如果出现数据乱跳的现象，可再次判断引脚电平，以避免抖动*/
+		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_1) == 0)
+		{
+			    flag2 = ~flag2;
+				  if(flag1)
+						TIM_SetCompare2(TIM2, 1500);
+					else
+						TIM_SetCompare2(TIM2, 500);
+		}
+		EXTI_ClearITPendingBit(EXTI_Line1);		
+													//中断标志位必须清除
+													//否则中断将连续不断地触发，导致主程序卡死
+	}
+}
